@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand:      #1D9E75;
+    --color-brand-dark: #0F6E56;
+    --color-brand-light:#E1F5EE;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+  }
+
+  h1 { @apply text-xl font-semibold; }
+  h2 { @apply text-base font-semibold; }
+  h3 { @apply text-sm font-medium; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-gray-200 rounded-xl p-5;
+  }
+
+  .card-sm {
+    @apply bg-white border border-gray-200 rounded-lg p-4;
+  }
+
+  .metric-card {
+    @apply bg-gray-50 rounded-lg p-4;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium
+           border border-gray-200 bg-white text-gray-700
+           hover:bg-gray-50 transition-colors cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium
+           bg-teal-400 text-white border-teal-400
+           hover:bg-teal-600 hover:border-teal-600 transition-colors cursor-pointer;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-green  { @apply bg-teal-50 text-teal-600; }
+  .badge-amber  { @apply bg-amber-50 text-amber-700; }
+  .badge-red    { @apply bg-red-50 text-red-700; }
+  .badge-blue   { @apply bg-blue-50 text-blue-700; }
+  .badge-gray   { @apply bg-gray-100 text-gray-500; }
+
+  .form-label {
+    @apply block text-xs text-gray-500 mb-1;
+  }
+
+  .form-input {
+    @apply w-full text-sm px-3 py-2 rounded-lg border border-gray-200
+           focus:outline-none focus:ring-2 focus:ring-teal-400/20 focus:border-teal-400
+           bg-white text-gray-900;
+  }
+
+  .form-select {
+    @apply w-full text-sm px-3 py-2 rounded-lg border border-gray-200
+           focus:outline-none focus:ring-2 focus:ring-teal-400/20 focus:border-teal-400
+           bg-white text-gray-900 cursor-pointer;
+  }
+
+  .tag-btn {
+    @apply px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200
+           bg-white text-gray-500 cursor-pointer hover:border-teal-400 hover:text-teal-600
+           transition-colors;
+  }
+
+  .tag-btn-active {
+    @apply bg-teal-50 text-teal-700 border-teal-400 font-semibold;
+  }
+
+  .formula-box {
+    @apply bg-gray-50 rounded-lg px-4 py-3 text-xs text-gray-500
+           border-l-2 border-teal-400;
+  }
+
+  .narrative-box {
+    @apply bg-teal-50 rounded-xl px-4 py-3 text-sm text-teal-800
+           border border-teal-200;
+  }
+
+  .warning-box {
+    @apply bg-amber-50 rounded-lg px-4 py-3 text-xs text-amber-700
+           border-l-2 border-amber-400;
+  }
+
+  .info-box {
+    @apply bg-blue-50 rounded-lg px-4 py-3 text-xs text-blue-700
+           border-l-2 border-blue-400;
+  }
+
+  .error-box {
+    @apply bg-red-50 rounded-lg px-4 py-3 text-xs text-red-700
+           border-l-2 border-red-400;
+  }
+
+  .divider {
+    @apply border-0 border-t border-gray-100 my-4;
+  }
+
+  .table-base {
+    @apply w-full text-xs border-collapse;
+  }
+
+  .table-base th {
+    @apply px-3 py-2 text-left font-medium text-gray-500
+           bg-gray-50 border-b border-gray-100;
+  }
+
+  .table-base td {
+    @apply px-3 py-2 border-b border-gray-50;
+  }
+
+  .table-base tr:last-child td {
+    @apply border-0;
+  }
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  border-radius: 0.75rem;
+  z-index: 0;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-gray-200 rounded-full; }
